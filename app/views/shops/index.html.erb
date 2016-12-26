@@ -1,31 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Shops</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Body</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @shops.each do |shop| %>
-      <tr>
-        <td><%= shop.name %></td>
-        <td><%= shop.body %></td>
-        <td><%= shop.image %></td>
-        <td><%= link_to 'Show', shop %></td>
-        <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
-        <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Shop', new_shop_path %>
+<% @shops.each_slice(3) do |shops| %>
+<!-- 列 -->
+<ul class="frex">
+  <% shops.each do |shop| %>
+  <!-- カード -->
+  <%= link_to(shop) do %>
+  <section class="card">
+    <%= image_tag(shop.image, :class => "card-img", :alt => "") %>
+    <div class="card-content">
+      <h1 class="card-title"><%= shop.name %></h1>
+      <p class="card-text"><%= shop.body %></p>
+    </div>
+    <div class="card-link">
+      <a href="http://webcreatorbox.com/about">About</a>
+      <a href="http://webcreatorbox.com/">Website</a>
+    </div>
+  </section>
+  <% end %>
+  <!-- カード -->
+  <% end %>
+</ul>
+<!-- 列 -->
+<% end %>
