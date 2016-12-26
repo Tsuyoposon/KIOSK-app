@@ -11,6 +11,10 @@
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under the MIT license
  */
+ .frex {
+  display: flex;
+  justify-content: space-between;
+}
  .card {
    width: 350px;
    background: #fff;
@@ -49,7 +53,7 @@
  .card-link a:hover {
    color: #0090aa;
  }
- 
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @font-face {
   font-family: "Yu Gothic";
