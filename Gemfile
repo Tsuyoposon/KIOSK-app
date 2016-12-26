@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # 追加gem
 gem 'carrierwave'
 gem 'seed-fu', '~> 2.3'
-
+gem 'rmagick'
 
 
 
