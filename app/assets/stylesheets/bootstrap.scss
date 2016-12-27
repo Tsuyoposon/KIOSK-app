@@ -1,58 +1,80 @@
 @charset "UTF-8";
 /*!
- * Umi v3.3.7-2
- * Website https://nkmr6194.github.io/Umi/
- * Copyright 2015 SAKATA Sinji
- * The MIT License
- * Based on Honoka (http://honokak.osaka/) by windyakin
- */
+* Umi v3.3.7-2
+* Website https://nkmr6194.github.io/Umi/
+* Copyright 2015 SAKATA Sinji
+* The MIT License
+* Based on Honoka (http://honokak.osaka/) by windyakin
+*/
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
- * Licensed under the MIT license
- */
- .frex {
+* Bootstrap v3.3.7 (http://getbootstrap.com)
+* Copyright 2011-2016 Twitter, Inc.
+* Licensed under the MIT license
+*/
+.card-title-show {
+  font-size: 40px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  color: #333;
+}
+.card-show {
+  width: 800px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+}
+.card-img-show {
+  border-radius: 5px 5px 5px 5px;
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.frex {
   display: flex;
   justify-content: space-between;
 }
- .card {
-   width: 350px;
-   background: #fff;
-   border-radius: 5px;
-   box-shadow: 0 2px 5px #ccc;
- }
- .card-img {
-   border-radius: 5px 5px 0 0;
-   max-width: 100%;
-   height: auto;
- }
- .card-content {
-   padding: 20px;
- }
- .card-title {
-   font-size: 20px;
-   margin-bottom: 20px;
-   text-align: center;
-   color: #333;
- }
- .card-text {
-   color: #777;
-   font-size: 14px;
-   line-height: 1.5;
- }
- .card-link {
-   text-align: center;
-   border-top: 1px solid #eee;
-   padding: 20px;
- }
- .card-link a {
-   text-decoration: none;
-   color: #0bd;
-   margin: 0 10px;
- }
- .card-link a:hover {
-   color: #0090aa;
- }
+.card {
+  width: 350px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+}
+.card-img {
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+  height: auto;
+}
+.card-content {
+  padding: 20px;
+}
+.card-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+.card-text {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.card-link {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 20px;
+}
+.card-link a {
+  text-decoration: none;
+  color: #0bd;
+  margin: 0 10px;
+}
+.card-link a:hover {
+  color: #0090aa;
+}
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @font-face {

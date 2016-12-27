@@ -1,19 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @shop.name %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @shop.body %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= image_tag(@shop.image) if @shop.image.present? %>
-</p>
-
-<%= link_to 'Edit', edit_shop_path(@shop) %> |
-<%= link_to 'Back', shops_path %>
+<section class="card-show">
+  <h1 class="card-title-show"><%= @shop.name %></h1>
+  <%= image_tag(@shop.image, :class => "card-img-show", :alt => "") %>
+  <p>
+    <strong>Body:</strong>
+    <%= @shop.body %>
+  </p>
+</section>
