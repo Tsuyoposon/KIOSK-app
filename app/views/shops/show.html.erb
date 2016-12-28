@@ -3,23 +3,27 @@
 <section class="card-show">
   <h1 class="card-title-show"><%= @shop.name %></h1>
   <%= image_tag(@shop.image, :class => "card-img-show", :alt => "") %>
-  <p>
-    <strong>Body:</strong>
-    <%= @shop.body %>
-  </p>
+  <p class="card-text-show"><%= @shop.body %></p>
 </section>
-<section class="card-show">
+
+<!-- コメント欄 -->
+<section class="card-show" style="padding: 2px 20px 20px 20px">
+  <h1 style="font-size: 30px; color: #333; margin-left: 20px;">Comments</h1>
+  <div style="border-bottom: 2px solid #dcdcdc; margin-bottom: 20px;">
+    <%= render 'comments/form' %>
+  </div>
   <div>
     <% @comments.each do |comment| %>
     <div>
       <strong><%= comment.user.name %></strong>
+      <% if comment.user.id == session[:user_id] %>
+      <%= link_to 'Delete', comment_path(comment), method: :delete %>
+      <% end %>
       <br />
       <p><%= comment.body %></p>
-      <% if comment.user.id == session[:user_id] %>
-      <p><%= link_to 'Delete', comment_path(comment), method: :delete %></p>
-      <% end %>
+
     </div>
     <% end %>
-    <%= render 'comments/form' %>
+
   </div>
 </section>

@@ -1,4 +1,17 @@
 @charset "UTF-8";
+
+input[type="text"]:focus,
+textarea:focus,
+input[type="text"]:hover,
+textarea:hover {
+	border:2px solid #3399FF;
+}
+input[type="text"],
+textarea {
+	border:2px solid #e8e8e8;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
 /*!
 * Umi v3.3.7-2
 * Website https://nkmr6194.github.io/Umi/
@@ -11,6 +24,21 @@
 * Copyright 2011-2016 Twitter, Inc.
 * Licensed under the MIT license
 */
+
+.card-comment {
+  width: 700px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-text-show {
+  color: #777;
+  font-size: 17px;
+  line-height: 1.5;
+  padding: 20px;
+}
 .card-title-show {
   font-size: 40px;
   padding-top: 20px;
@@ -23,6 +51,8 @@
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  margin-bottom: 30px;
 }
 .card-img-show {
   border-radius: 5px 5px 5px 5px;
