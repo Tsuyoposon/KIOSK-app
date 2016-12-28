@@ -10,6 +10,8 @@ class ShopsController < ApplicationController
   # GET /shops/1
   # GET /shops/1.json
   def show
+    @comments = @shop.comments.includes(:user).all
+    @comment = @shop.comments.build(user_id: session[:user_id])
   end
 
   # GET /shops/new
