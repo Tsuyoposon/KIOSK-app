@@ -6,6 +6,6 @@ class Shop < ActiveRecord::Base
   belongs_to :user
   has_many :wents, dependent: :destroy
   def went_user(user_id)
-   likes.find_by(user_id: user_id)
+   wents.find_by(user_id: user_id)
   end
 end

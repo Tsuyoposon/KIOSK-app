@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   root "top#index"
 
   resources :users
-  resources :shops
+  resources :shops do
+    resources :wents, only: [:create, :destroy]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
