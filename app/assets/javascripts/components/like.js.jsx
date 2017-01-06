@@ -1,7 +1,12 @@
 Like = React.createClass({
-  render: function() {
+
+  ajaxMain: function(){
+    console.log("hello world!");
+  },
+
+  render: function(){
     return(
-      <div>Hello World!</div>
+      <button onClick={this.ajaxMain}>いいね!</button>
     );
   }
 });
