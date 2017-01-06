@@ -1,93 +1,105 @@
-User.create(
-:id => 1,
-:name => "ユーザ１"
-)
-User.create(
-:id => 2,
-:name => "ユーザ２"
-)
-User.create(
-:id => 3,
-:name => "ユーザ３"
-)
-User.create(
-:id => 4,
-:name => "ユーザ４"
-)
-User.create(
-:id => 5,
-:name => "ユーザ５"
-)
 
-Shop.create(
-:id => 1,
-:name => "店舗１",
-:body => "おいしいナポリタンのお店です",
-:image => Rails.root.join("db/fixtures/shop_2.jpg").open
-)
-Shop.create(
-:id => 2,
-:name => "店舗２",
-:body => "おいしいナポリタンのお店です",
-:image => Rails.root.join("db/fixtures/shop_2.jpg").open
-)
-Shop.create(
-:id => 3,
-:name => "店舗３",
-:body => "おいしいナポリタンのお店です",
-:image => Rails.root.join("db/fixtures/shop_2.jpg").open
-)
-Shop.create(
-:id => 4,
-:name => "店舗４",
-:body => "おいしいナポリタンのお店です",
-:image => Rails.root.join("db/fixtures/shop_2.jpg").open
-)
-Shop.create(
-:id => 5,
-:name => "店舗５",
-:body => "おいしいナポリタンのお店です",
-:image => Rails.root.join("db/fixtures/shop_2.jpg").open
-)
-Shop.create(
-:id => 6,
-:name => "店舗６",
-:body => "おいしいナポリタンのお店です",
-:image => Rails.root.join("db/fixtures/shop_2.jpg").open
-)
-Shop.create(
-:id => 7,
-:name => "店舗７",
-:body => "おいしいナポリタンのお店です",
-:image => Rails.root.join("db/fixtures/shop_2.jpg").open
-)
-Shop.create(
-:id => 8,
-:name => "店舗８",
-:body => "おいしいナポリタンのお店です",
-:image => Rails.root.join("db/fixtures/shop_2.jpg").open
-)
-Shop.create(
-:id => 9,
-:name => "店舗９",
-:body => "おいしいナポリタンのお店です",
-:image => Rails.root.join("db/fixtures/shop_2.jpg").open
-)
-Shop.create(
-:id => 10,
-:name => "店舗１０",
-:body => "おいしいナポリタンのお店です",
-:image => Rails.root.join("db/fixtures/shop_2.jpg").open
-)
-Shop.create(
-:id => 11,
-:name => "店舗１１",
-:body => "おいしいナポリタンのお店です",
-:image => Rails.root.join("db/fixtures/shop_2.jpg").open
-)
-Shop.create(
-:id => 12,
-:name => "店舗１２",
-:body => "おいしいナポリタンのお店です",
-:image => Rails.root.join("db/fixtures/shop_2.jpg").open
-)
+User.seed do |s|
+  s.id => 1,
+  s.name => "ユーザ１"
+end
+User.seed do |s|
+  s.id => 2,
+  s.name => "ユーザ２"
+end
+User.seed do |s|
+  s.id => 3,
+  s.name => "ユーザ3"
+end
+User.seed do |s|
+  s.id => 4,
+  s.name => "ユーザ4"
+end
+User.seed do |s|
+  s.id => 5,
+  s.name => "ユーザ5"
+end
+
+Shop.seed do |s|
+  s.id => 1,
+  s.name => "店舗１",
+  s.body => "おいしいナポリタンのお店です",
+  s.image => Rails.root.join("db/fixtures/shop_2.jpg").open
+end	
+
+Shop.seed do |s|
+  s.id => 2,
+  s.name => "店舗2",
+  s.body => "おいしいナポリタンのお店です",
+  s.image => Rails.root.join("db/fixtures/shop_2.jpg").open
+end	
+
+Shop.seed do |s|
+  s.id => 3,
+  s.name => "店舗3",
+  s.body => "おいしいナポリタンのお店です",
+  s.image => Rails.root.join("db/fixtures/shop_2.jpg").open
+end	
+
+Shop.seed do |s|
+  s.id => 4,
+  s.name => "店舗4",
+  s.body => "おいしいナポリタンのお店です",
+  s.image => Rails.root.join("db/fixtures/shop_2.jpg").open
+end	
+
+Shop.seed do |s|
+  s.id => 5,
+  s.name => "店舗5",
+  s.body => "おいしいナポリタンのお店です",
+  s.image => Rails.root.join("db/fixtures/shop_2.jpg").open
+end	
+
+Shop.seed do |s|
+  s.id => 6,
+  s.name => "店舗6",
+  s.body => "おいしいナポリタンのお店です",
+  s.image => Rails.root.join("db/fixtures/shop_2.jpg").open
+end	
+
+Shop.seed do |s|
+  s.id => 7,
+  s.name => "店舗7",
+  s.body => "おいしいナポリタンのお店です",
+  s.image => Rails.root.join("db/fixtures/shop_2.jpg").open
+end	
+
+Shop.seed do |s|
+  s.id => 8,
+  s.name => "店舗8",
+  s.body => "おいしいナポリタンのお店です",
+  s.image => Rails.root.join("db/fixtures/shop_2.jpg").open
+end	
+
+Shop.seed do |s|
+  s.id => 9,
+  s.name => "店舗9",
+  s.body => "おいしいナポリタンのお店です",
+  s.image => Rails.root.join("db/fixtures/shop_2.jpg").open
+end	
+
+Shop.seed do |s|
+  s.id => 10,
+  s.name => "店舗10",
+  s.body => "おいしいナポリタンのお店です",
+  s.image => Rails.root.join("db/fixtures/shop_2.jpg").open
+end	
+
+Shop.seed do |s|
+  s.id => 11,
+  s.name => "店舗１1",
+  s.body => "おいしいナポリタンのお店です",
+  s.image => Rails.root.join("db/fixtures/shop_2.jpg").open
+end	
+
+Shop.seed do |s|
+  s.id => 12,
+  s.name => "店舗１2",
+  s.body => "おいしいナポリタンのお店です",
+  s.image => Rails.root.join("db/fixtures/shop_2.jpg").open
+end	
