@@ -1,0 +1,13 @@
+    <%= button_to shop_went_path(shop, shop_id: shop.id), method: :delete, id: "went-button", remote: true do %>
+      <span>
+        <%= shop.went_count %>
+      </span>
+    <% end %>
+    <%= button_to shop_wents_path(shop), id: "went-button", remote: true do %>
+      <span>
+        <%= shop.went_count %>
+      </span>
+    <% end %>
+    <span>
+      <%= shop.went_count %>
+    </span>

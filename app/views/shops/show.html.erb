@@ -4,6 +4,7 @@
   <h1 class="card-title-show"><%= @shop.name %></h1>
   <%= image_tag(@shop.image, :class => "card-img-show", :alt => "") %>
   <p class="card-text-show"><%= @shop.body %></p>
+  <p><%= render :partial => 'layouts/went' %></p>
 </section>
 
 <!-- コメント欄 -->
