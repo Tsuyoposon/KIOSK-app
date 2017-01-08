@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+
+  resource :wents, except: [:edit, :new, :show]
+  resources :wents, only: [:index, :show]
+
   resource :c_likes, except: [:edit, :new, :show]
   resources :c_likes, only: [:index, :show]
 
