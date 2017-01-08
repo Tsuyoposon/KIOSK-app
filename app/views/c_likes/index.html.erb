@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing C Likes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @c_likes.each do |c_like| %>
+      <tr>
+        <td><%= c_like.user_id %></td>
+        <td><%= c_like.comment_id %></td>
+        <td><%= link_to 'Show', c_like %></td>
+        <td><%= link_to 'Edit', edit_c_like_path(c_like) %></td>
+        <td><%= link_to 'Destroy', c_like, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New C like', new_c_like_path %>

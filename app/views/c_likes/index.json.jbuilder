@@ -1,0 +1,1 @@
+json.array! @c_likes, partial: 'c_likes/c_like', as: :c_like

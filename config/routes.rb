@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :c_likes
   resource :likes, except: [:edit, :new, :show]
   resources :likes, only: [:index, :show]
 
