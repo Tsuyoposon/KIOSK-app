@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resource :c_likes, except: [:edit, :new, :show]
+  resources :c_likes, only: [:index, :show]
+
+  resource :likes, except: [:edit, :new, :show]
+  resources :likes, only: [:index, :show]
+
   resources :comments
   get 'top/index'
   root "top#index"
