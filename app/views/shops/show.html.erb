@@ -17,11 +17,12 @@
     <% @comments.each do |comment| %>
     <div>
       <strong><%= comment.user.name %></strong>
-      <% if comment.user.id == session[:user_id] %>
+      <% if comment.user.id == current_user.id %>
       <%= link_to 'Delete', comment_path(comment), method: :delete %>
       <% end %>
-      <br />
+      <br/>
       <p><%= comment.body %></p>
+      <%= react_component 'C_like', post: comment.id, url: c_likes_path %>
 
     </div>
     <% end %>
