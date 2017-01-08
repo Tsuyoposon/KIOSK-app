@@ -1,5 +1,4 @@
-<p id="notice"><%= notice %></p>
-
+<section class="card-comment-show">
 <p>
   <strong>User:</strong>
   <%= @comment.user_id %>
@@ -15,5 +14,6 @@
   <%= @comment.body %>
 </p>
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<%= button_to "トップ画面へ戻る", root_path, :method => :get , :class => "btn btn-info" %>
+<%= button_to "ショップへ戻る",shop_path(@comment.shop_id), :class => "btn btn-info" %>
+</section>
