@@ -1,31 +1,8 @@
-<p id="notice"><%= notice %></p>
+<section class="card-comment-show">
+  <p style="font-size: 16px;">コメントを削除しました</p>
 
-<h1>Listing Comments</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Shop</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @comments.each do |comment| %>
-      <tr>
-        <td><%= comment.user_id %></td>
-        <td><%= comment.shop_id %></td>
-        <td><%= comment.body %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Comment', new_comment_path %>
+  <ul class="list-inline">
+    <li><%= button_to "ショップへ戻る", shops_path, :method => :get , :class => "btn btn-success" %></li>
+    <li><%= button_to "トップ画面へ戻る", root_path, :method => :get , :class => "btn btn-info" %></li>
+  </ul>
+</section>

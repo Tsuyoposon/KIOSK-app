@@ -1,5 +1,3 @@
-
-
 <section class="card-show">
   <h1 class="card-title-show"><%= @shop.name %></h1>
   <%= image_tag(@shop.image, :class => "card-img-show", :alt => "") %>
@@ -17,12 +15,12 @@
   <div>
     <% @comments.each do |comment| %>
     <div>
-      <strong><%= comment.user.name %></strong>
+      <strong style="font-size: 15px;"><%= comment.user.name %></strong>
       <% if comment.user.id == current_user.id %>
       <%= link_to 'Delete', comment_path(comment), method: :delete %>
       <% end %>
       <br/>
-      <p><%= comment.body %></p>
+      <p style="font-size: 18px;">&nbsp;&nbsp;<%= comment.body %></p>
       <%= react_component 'C_like', post: comment.id, url: c_likes_path %>
 
     </div>
