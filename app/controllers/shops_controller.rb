@@ -12,6 +12,7 @@ class ShopsController < ApplicationController
   def show
     @comments = @shop.comments.includes(:user).all
     @comment = @shop.comments.build(user_id: session[:user_id])
+    @shop_random = Shop.order("RANDOM()").limit(3)
   end
 
   # GET /shops/new

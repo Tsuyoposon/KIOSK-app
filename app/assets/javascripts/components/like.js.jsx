@@ -39,14 +39,14 @@ Like = React.createClass({
         if(this.state.is_liked){
           return (
               <ul className="list-inline nav nav-pills">
-                <li className="active"><p style={fonter}>いいね!&nbsp;<span className="badge">{this.state.counts}</span></p></li>
+                <li className="active"><p style={fonter}>&nbsp;&nbsp;&nbsp;&nbsp;いいね!&nbsp;<span className="badge">{this.state.counts}</span></p></li>
                 <li className="iinebtn-bottom"><button className="btn btn-danger disabled disabled btn-sm" onClick={this.ajaxMain.bind(this, this.state.is_liked ? 'DELETE' : 'POST')}><strong>いいね 取り消し!</strong></button></li>
               </ul>
             );
         }else{
           return(
               <ul className="list-inline nav nav-pills">
-                <li className="active"><p style={fonter}>いいね!&nbsp;<span className="badge">{this.state.counts}</span></p></li>
+                <li className="active"><p style={fonter}>&nbsp;&nbsp;&nbsp;&nbsp;いいね!&nbsp;<span className="badge">{this.state.counts}</span></p></li>
                 <li className="iinebtn-bottom"><button className="btn btn-danger disabled btn-sm" onClick={this.ajaxMain.bind(this, this.state.is_liked ? 'DELETE' : 'POST')}><strong>いいね!</strong></button></li>
               </ul>
           );

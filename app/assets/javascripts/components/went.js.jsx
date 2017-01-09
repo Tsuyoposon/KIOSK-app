@@ -39,14 +39,14 @@ Went = React.createClass({
         if(this.state.is_wented){
           return (
               <ul className="list-inline nav nav-pills">
-                <li className="active"><p style={fonter}>行きました&nbsp;<span className="badge">{this.state.counts}</span></p></li>
+                <li className="active"><p style={fonter}>&nbsp;&nbsp;&nbsp;&nbsp;行きました&nbsp;<span className="badge">{this.state.counts}</span></p></li>
                 <li><button className="btn btn-success disabled btn-sm" onClick={this.ajaxMain.bind(this, this.state.is_wented ? 'DELETE' : 'POST')}><strong>行きました 取り消し!</strong></button></li>
               </ul>
             );
         }else{
           return(
               <ul className="list-inline nav nav-pills">
-                <li className="active"><p style={fonter}>行きました&nbsp;<span className="badge">{this.state.counts}</span></p></li>
+                <li className="active"><p style={fonter}>&nbsp;&nbsp;&nbsp;&nbsp;行きました&nbsp;<span className="badge">{this.state.counts}</span></p></li>
                 <li><button className="btn btn-success disabled btn-sm" onClick={this.ajaxMain.bind(this, this.state.is_wented ? 'DELETE' : 'POST')}><strong>行ったよ!</strong></button></li>
               </ul>
           );
