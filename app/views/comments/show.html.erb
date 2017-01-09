@@ -1,19 +1,9 @@
 <section class="card-comment-show">
-<p>
-  <strong>User:</strong>
-  <%= @comment.user_id %>
-</p>
+  <p style="font-size: 16px;">以下の内容でコメントを送信しました</p>
 
-<p>
-  <strong>Shop:</strong>
-  <%= @comment.shop_id %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @comment.body %>
-</p>
-
-<%= button_to "トップ画面へ戻る", root_path, :method => :get , :class => "btn btn-info" %>
-<%= button_to "ショップへ戻る",shop_path(@comment.shop_id), :class => "btn btn-info" %>
+  <p style="font-size: 20px; margin: 20px;">
+    &nbsp;&nbsp;コメント:
+    <strong><%= @comment.body %></strong>
+  </p>
+  <%= button_to "ショップへ戻る", shop_path(@comment.shop_id), :method => :get , :class => "btn btn-success" %>
 </section>
