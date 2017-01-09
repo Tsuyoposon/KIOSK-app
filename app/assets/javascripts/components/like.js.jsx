@@ -35,17 +35,17 @@ Like = React.createClass({
     render: function(){
         if(this.state.is_liked){
           return (
-                <div>
-                    <p>{this.state.counts}いいね</p>
-                    <button onClick={this.ajaxMain.bind(this, this.state.is_liked ? 'DELETE' : 'POST')}>いいね 取り消し!</button>
-                </div>
+              <ul className="list-inline">
+                <li><p>{this.state.counts}いいね</p></li>
+                <li><button onClick={this.ajaxMain.bind(this, this.state.is_liked ? 'DELETE' : 'POST')}>いいね 取り消し!</button></li>
+              </ul>
             );
         }else{
           return(
-              <div>
-                <p>{this.state.counts}いいね</p>
-                <button onClick={this.ajaxMain.bind(this, this.state.is_liked ? 'DELETE' : 'POST')}>いいね!</button>
-              </div>
+              <ul className="list-inline">
+                <li><p>{this.state.counts}いいね</p></li>
+                <li><button onClick={this.ajaxMain.bind(this, this.state.is_liked ? 'DELETE' : 'POST')}>いいね!</button></li>
+              </ul>
           );
         }
 
