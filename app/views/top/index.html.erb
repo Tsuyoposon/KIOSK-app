@@ -1,56 +1,42 @@
 <h1 face="Impact" style="margin-bottom: 30px;">KIOSK端末</h1>
-<ul class="frex" style="margin-bottom: 30px;">
+<ul class="frex" style="padding-left: 100px; padding-right: 100px;">
   <%= link_to(shops_path) do %>
-  <section class="card">
-
-    <div class="card-content">
-
-    </div>
-    <div class="card-link">
-    </div>
+  <section class="top-card">
+    <%= image_tag("top_1.png", :class => "top-img") %>
+    <p style="font-size: 35px; margin-top: 25px">食べる</p>
   </section>
   <% end %>
-  <section class="card">
-
-    <div class="card-content">
-
-    </div>
-    <div class="card-link">
-    </div>
+  <%= link_to("#") do %>
+  <section class="top-card">
+    <%= image_tag("top_2.png", :class => "top-img") %>
+    <p style="font-size: 35px; margin-top: 25px">暮らす</p>
   </section>
-  <section class="card">
-
-    <div class="card-content">
-
-    </div>
-    <div class="card-link">
-    </div>
+  <% end %>
+  <%= link_to("#") do %>
+  <section class="top-card">
+    <%= image_tag("top_3.png", :class => "top-img") %>
+    <p style="font-size: 35px; margin-top: 25px;">出かける</p>
   </section>
+  <% end %>
 </ul>
-<ul class="frex">
 
-  <section class="card">
-
-    <div class="card-content">
-
-    </div>
-    <div class="card-link">
-    </div>
+<ul class="frex" style="padding: 100px; padding-bottom: 0px;">
+  <%= link_to("#") do %>
+  <section class="top-card">
+    <%= image_tag("top_4.png", :class => "top-img") %>
+    <p style="font-size: 35px; margin-top: 25px;">つながる</p>
   </section>
-  <section class="card">
-
-    <div class="card-content">
-
-    </div>
-    <div class="card-link">
-    </div>
+  <% end %>
+  <%= link_to("#") do %>
+  <section class="top-card">
+    <%= image_tag("top_5.png", :class => "top-img") %>
+    <p style="font-size: 35px; margin-top: 25px;">マイ情報</p>
   </section>
-  <section class="card">
-
-    <div class="card-content">
-
-    </div>
-    <div class="card-link">
-    </div>
+  <% end %>
+  <%= link_to("#") do %>
+  <section class="top-card">
+    <%= image_tag("top_6.png", :class => "top-img") %>
+    <p style="font-size: 35px; margin-top: 25px;">ポイント</p>
   </section>
+  <% end %>
 </ul>
