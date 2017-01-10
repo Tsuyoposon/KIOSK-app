@@ -18,7 +18,26 @@ User.create(
 :id => 5,
 :name => "ユーザ５"
 )
-
+User.create(
+:id => 6,
+:name => "ユーザ６"
+)
+User.create(
+:id => 7,
+:name => "ユーザ７"
+)
+User.create(
+:id => 8,
+:name => "ユーザ８"
+)
+User.create(
+:id => 9,
+:name => "ユーザ９"
+)
+User.create(
+:id => 10,
+:name => "ユーザ１０"
+)
 Shop.create(
 :id => 1,
 :name => "CAFE RESTAURANT JARAN JARAN",
@@ -106,3 +125,93 @@ Shop.create(
  本格的な料理を楽しみ、お酒を嗜みながら耳を傾けるジャズは、格別なひとときを演出してくれる。",
 :image => Rails.root.join("db/fixtures/shop_12.jpg").open
 )
+Comment.create(:id => 1,:user_id => 1,:shop_id => 1,:body => "いい店だった")
+Comment.create(:id => 2,:user_id => 6,:shop_id => 1,:body => "よかった")
+Comment.create(:id => 3,:user_id => 7,:shop_id => 2,:body => "また来たい")
+Comment.create(:id => 4,:user_id => 8,:shop_id => 2,:body => "よかった")
+Comment.create(:id => 5,:user_id => 9,:shop_id => 3,:body => "よかった")
+Comment.create(:id => 6,:user_id => 10,:shop_id => 5,:body => "よかった")
+Comment.create(:id => 7,:user_id => 6,:shop_id => 6,:body => "よかった")
+Comment.create(:id => 8,:user_id => 7,:shop_id => 7,:body => "よかった")
+Comment.create(:id => 9,:user_id => 8,:shop_id => 8,:body => "よかった")
+Comment.create(:id => 10,:user_id => 9,:shop_id => 9,:body => "よかった")
+
+
+Like.create(:id => 1,:user_id => 6,:shop_id => 1)
+Like.create(:id => 2,:user_id => 6,:shop_id => 2,)
+Like.create(:id => 3,:user_id => 6,:shop_id => 3,)
+Like.create(:id => 4,:user_id => 6,:shop_id => 5,)
+Like.create(:id => 5,:user_id => 6,:shop_id => 6,)
+Like.create(:id => 6,:user_id => 6,:shop_id => 7,)
+Like.create(:id => 7,:user_id => 7,:shop_id => 1,)
+Like.create(:id => 8,:user_id => 7,:shop_id => 2,)
+Like.create(:id => 9,:user_id => 7,:shop_id => 4,)
+Like.create(:id => 10,:user_id => 7,:shop_id => 5,)
+Like.create(:id => 11,:user_id => 7,:shop_id => 6,)
+Like.create(:id => 12,:user_id => 7,:shop_id => 9,)
+Like.create(:id => 13,:user_id => 7,:shop_id => 10,)
+Like.create(:id => 14,:user_id => 8,:shop_id => 2,)
+Like.create(:id => 15,:user_id => 8,:shop_id => 4,)
+Like.create(:id => 16,:user_id => 8,:shop_id => 5,)
+Like.create(:id => 17,:user_id => 8,:shop_id => 6,)
+Like.create(:id => 18,:user_id => 8,:shop_id => 11,)
+Like.create(:id => 19,:user_id => 8,:shop_id => 9,)
+Like.create(:id => 20,:user_id => 8,:shop_id => 1,)
+Like.create(:id => 21,:user_id => 9,:shop_id => 1,)
+Like.create(:id => 22,:user_id => 9,:shop_id => 3,)
+Like.create(:id => 23,:user_id => 9,:shop_id => 11,)
+Like.create(:id => 24,:user_id => 9,:shop_id => 7,)
+Like.create(:id => 25,:user_id => 9,:shop_id => 8,)
+Like.create(:id => 26,:user_id => 9,:shop_id => 9,)
+Like.create(:id => 27,:user_id => 9,:shop_id => 12,)
+Like.create(:id => 28,:user_id => 9,:shop_id => 4,)
+Like.create(:id => 29,:user_id => 10,:shop_id => 1,)
+Like.create(:id => 30,:user_id => 10,:shop_id => 4,)
+Like.create(:id => 31,:user_id => 10,:shop_id => 12,)
+Like.create(:id => 32,:user_id => 10,:shop_id => 8,)
+Like.create(:id => 33,:user_id => 10,:shop_id => 9,)
+
+Went.create(:id => 1,:user_id => 6,:shop_id => 1)
+Went.create(:id => 2,:user_id => 6,:shop_id => 2)
+Went.create(:id => 3,:user_id => 6,:shop_id => 3)
+Went.create(:id => 4,:user_id => 6,:shop_id => 4)
+Went.create(:id => 5,:user_id => 6,:shop_id => 6)
+Went.create(:id => 6,:user_id => 6,:shop_id => 8)
+Went.create(:id => 7,:user_id => 6,:shop_id => 9)
+Went.create(:id => 8,:user_id => 7,:shop_id => 1)
+Went.create(:id => 9,:user_id => 7,:shop_id => 2)
+Went.create(:id => 10,:user_id => 7,:shop_id => 4)
+Went.create(:id => 11,:user_id => 7,:shop_id => 5)
+Went.create(:id => 12,:user_id => 7,:shop_id => 6)
+Went.create(:id => 13,:user_id => 7,:shop_id => 7)
+Went.create(:id => 14,:user_id => 8,:shop_id => 7)
+Went.create(:id => 15,:user_id => 9,:shop_id => 7)
+Went.create(:id => 16,:user_id => 7,:shop_id => 8)
+Went.create(:id => 17,:user_id => 7,:shop_id => 11)
+Went.create(:id => 18,:user_id => 7,:shop_id => 12)
+Went.create(:id => 19,:user_id => 8,:shop_id => 1)
+Went.create(:id => 20,:user_id => 8,:shop_id => 2)
+Went.create(:id => 21,:user_id => 8,:shop_id => 3)
+Went.create(:id => 22,:user_id => 8,:shop_id => 6)
+Went.create(:id => 23,:user_id => 8,:shop_id => 9)
+Went.create(:id => 24,:user_id => 8,:shop_id => 12)
+Went.create(:id => 25,:user_id => 9,:shop_id => 1)
+Went.create(:id => 26,:user_id => 9,:shop_id => 3)
+Went.create(:id => 27,:user_id => 9,:shop_id => 10)
+Went.create(:id => 28,:user_id => 10,:shop_id => 1)
+Went.create(:id => 29,:user_id => 10,:shop_id => 6)
+
+CLike.create(:id => 1,:user_id => 7,:comment_id => 1)
+CLike.create(:id => 2,:user_id => 6,:comment_id => 1)
+CLike.create(:id => 3,:user_id => 8,:comment_id => 1)
+CLike.create(:id => 4,:user_id => 6,:comment_id => 2)
+CLike.create(:id => 5,:user_id => 7,:comment_id => 2)
+CLike.create(:id => 6,:user_id => 8,:comment_id => 3)
+CLike.create(:id => 7,:user_id => 9,:comment_id => 3)
+CLike.create(:id => 8,:user_id => 10,:comment_id => 4)
+CLike.create(:id => 9,:user_id => 6,:comment_id => 4)
+CLike.create(:id => 10,:user_id => 7,:comment_id => 4)
+CLike.create(:id => 11,:user_id => 8,:comment_id => 5)
+CLike.create(:id => 12,:user_id => 9,:comment_id => 6)
+CLike.create(:id => 14,:user_id => 7,:comment_id => 8)
+CLike.create(:id => 15,:user_id => 3,:comment_id => 10)
