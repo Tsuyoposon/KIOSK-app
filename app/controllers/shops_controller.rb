@@ -5,6 +5,10 @@ class ShopsController < ApplicationController
   # GET /shops.json
   def index
     @shops = Shop.all
+    @comments = Comment.all
+    @likes = Like.all
+    @c_likes = CLike.all
+    @wents = Went.all
   end
 
   # GET /shops/1
@@ -13,6 +17,9 @@ class ShopsController < ApplicationController
     @comments = @shop.comments.includes(:user).all
     @comment = @shop.comments.build(user_id: session[:user_id])
     @shop_random = Shop.order("RANDOM()").limit(3)
+    @likes = Like.all
+    @c_likes = CLike.all
+    @wents = Went.all
   end
 
   # GET /shops/new

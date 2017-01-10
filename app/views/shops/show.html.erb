@@ -48,8 +48,14 @@
       <p class="card-text"><%= shop.body %></p>
     </div>
     <div class="card-link">
-      <a href="http://webcreatorbox.com/about">About</a>
-      <a href="http://webcreatorbox.com/">Website</a>
+      <ul class="list-inline">
+        <li><p style="font-size: 17px;">いいね&nbsp;
+          <span class="badge"  style="background-color: #EF8B80">
+            <%= @likes.where(shop_id: shop.id).count + @c_likes.where(comment_id: @comments.where(shop_id: shop.id)).count %>
+          </span>
+        </p></li>
+        <li><p style="font-size: 17px;">行きました&nbsp;<span class="badge" style="background-color: #69D3BF"><%= @wents.where(shop_id: shop.id).count %></span></p></li>
+      </ul>
     </div>
   </section>
   <% end %>
