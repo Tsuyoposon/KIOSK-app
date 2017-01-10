@@ -24,6 +24,12 @@ textarea {
 * Copyright 2011-2016 Twitter, Inc.
 * Licensed under the MIT license
 */
+.mojiseigenn {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+}
 .iinebadge {
 	background-color: #EF8B80;
 }
