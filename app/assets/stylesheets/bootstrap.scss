@@ -24,7 +24,44 @@ textarea {
 * Copyright 2011-2016 Twitter, Inc.
 * Licensed under the MIT license
 */
+.mojiseigenn {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+}
+.iinebadge {
+	background-color: #EF8B80;
+}
+.wentbadge {
+	background-color: #69D3BF;
+}
+.aikon-img {
+	position:absolute;top:13px;left:40px;
+	max-width: 10%;
+	height: auto;
+}
+.iinecolor {
+	color: #EF8B80;
+}
+.ciinebtn-bottom {
+	margin-bottom: 20px;
+}
+.iinebtn-bottom {
+	margin-bottom: 10px;
+}
+.card-comment-show {
+  width: 1000px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 20px;
+  margin-top: 50px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 
+}
 .card-comment {
   width: 700px;
   background: #fff;
@@ -53,6 +90,7 @@ textarea {
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
   margin-bottom: 30px;
+	margin-top: 30px;
 }
 .card-img-show {
   border-radius: 5px 5px 5px 5px;
@@ -61,7 +99,6 @@ textarea {
   display: block;
   margin-left: auto;
   margin-right: auto;
-
 }
 .frex {
   display: flex;

@@ -33,19 +33,22 @@ C_like = React.createClass({
 
 
     render: function(){
+    var fonter = {
+      fontSize: "15px"
+    };
         if(this.state.is_liked){
           return (
-                <div>
-                    <p>{this.state.counts}いいね</p>
-                    <button onClick={this.ajaxMain.bind(this, this.state.is_liked ? 'DELETE' : 'POST')}>いいね 取り消し!</button>
-                </div>
+              <ul className="list-inline nav nav-pills">
+                <li className="active"><p style={fonter} className="iinecolor"><strong>いいね!</strong>&nbsp;<span className="badge">{this.state.counts}</span></p></li>
+                <li className="ciinebtn-bottom"><button className="btn btn-danger disabled btn-xs" onClick={this.ajaxMain.bind(this, this.state.is_liked ? 'DELETE' : 'POST')}><strong>いいね 取り消し!</strong></button></li>
+              </ul>
             );
         }else{
           return(
-              <div>
-                <p>{this.state.counts}いいね</p>
-                <button onClick={this.ajaxMain.bind(this, this.state.is_liked ? 'DELETE' : 'POST')}>いいね!</button>
-              </div>
+              <ul className="list-inline nav nav-pills">
+                <li className="active"><p style={fonter}  className="iinecolor"><strong>いいね!</strong>&nbsp;<span className="badge">{this.state.counts}</span></p></li>
+                <li className="ciinebtn-bottom"><button className="btn btn-danger disabled btn-xs" onClick={this.ajaxMain.bind(this, this.state.is_liked ? 'DELETE' : 'POST')}><strong>いいね!</strong></button></li>
+              </ul>
           );
         }
 
