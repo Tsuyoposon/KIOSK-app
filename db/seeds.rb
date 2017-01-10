@@ -32,7 +32,7 @@ Shop.create(
 :name => "お食事処　喜し乃",
 :body => "「町家で味わう癒しの時間」
 お食事処　喜し乃では、京都町家をテーマにした懐かしい和の空間の中で、彩り豊かなお食事、お酒やドリンクをオリジナルの陶器でお楽しみいただけます。",
-:image => Rails.root.join("db/fixtures/shop_2.jpg").open
+:image => Rails.root.join("db/fixtures/shop_2_2.jpg").open
 )
 Shop.create(
 :id => 3,
