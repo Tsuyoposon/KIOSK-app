@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170107233054) do
+ActiveRecord::Schema.define(version: 20170302030629) do
 
   create_table "c_likes", force: :cascade do |t|
     t.integer  "user_id"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20170107233054) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "point"
+    t.float    "moving"
   end
 
   create_table "wents", force: :cascade do |t|
