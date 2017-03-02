@@ -1,22 +1,32 @@
 User.create(
 :id => 1,
-:name => "ユーザ１"
+:name => "ユーザ１",
+:point => 100,
+:moving => 1.1
 )
 User.create(
 :id => 2,
-:name => "ユーザ２"
+:name => "ユーザ２",
+:point => 200,
+:moving => 2.2
 )
 User.create(
 :id => 3,
-:name => "ユーザ３"
+:name => "ユーザ３",
+:point => 300,
+:moving => 3.3
 )
 User.create(
 :id => 4,
-:name => "ユーザ４"
+:name => "ユーザ４",
+:point => 400,
+:moving => 4.4
 )
 User.create(
 :id => 5,
-:name => "ユーザ５"
+:name => "ユーザ５",
+:point => 500,
+:moving => 5.5
 )
 User.create(
 :id => 6,
