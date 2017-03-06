@@ -5,4 +5,9 @@ class ConfirmationController < ApplicationController
 
   def ranking
   end
+
+  def kakuninn
+    @this = params[:this_shop]
+  end
+
 end
