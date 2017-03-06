@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
 
   get 'map/index'
+  get 'confirmation/status'
+
+  get 'confirmation/ranking'
 
   resource :wents, except: [:edit, :new, :show]
   resources :wents, only: [:index, :show]
