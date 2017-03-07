@@ -5,7 +5,6 @@
     <%= image_tag(@shop.image, :class => "card-img-show", :alt => "") %>
     <p class="card-text-show"><%= @shop.body %></p>
     <%= react_component 'Like', post: @shop.id, url: likes_path %>
-    <%= react_component 'Went', post: @shop.id, url: wents_path %>
     <%= link_to 'この店に行く', confirmation_kakuninn_path(this_shop: @shop.id) %>
   </section>
 
