@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  get 'map/index'
   get 'confirmation/status'
 
   get 'confirmation/ranking'
