@@ -1,4 +1,7 @@
-<h1>Listing Shops</h1>
+<h1>
+    ショップ一覧&nbsp;&nbsp;&nbsp;
+  <%= link_to("ショップマップへ", map_index_path, class: "btn btn-success", style: "color: #FFFFFF") %>
+</h1>
 <% @shops.each_slice(3) do |shops| %>
 <!-- 列 -->
 <ul class="frex">

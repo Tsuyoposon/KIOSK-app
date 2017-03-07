@@ -14,6 +14,7 @@ class ConfirmationController < ApplicationController
     @current_user.save
   end
 
+  # 引数に値を入れて距離を出す
   def self.get_distance(lat1, lng1)
     y1 = lat1 * Math::PI / 180
     x1 = lng1 * Math::PI / 180
