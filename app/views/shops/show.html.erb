@@ -4,8 +4,12 @@
     <h1 class="card-title-show"><%= @shop.name %></h1>
     <%= image_tag(@shop.image, :class => "card-img-show", :alt => "") %>
     <p class="card-text-show"><%= @shop.body %></p>
+    <div align="right" style="margin: 0px 40px;">
+      <%= link_to("この店に行く", confirmation_kakuninn_path(this_shop: @shop.id), class: "btn btn-warning", style: "color: #FFFFFF") %>
+    </div>
     <%= react_component 'Like', post: @shop.id, url: likes_path %>
-    <%= link_to 'この店に行く', confirmation_kakuninn_path(this_shop: @shop.id) %>
+    <%= react_component 'Went', post: @shop.id, url: wents_path %>
+
   </section>
 
   <!-- コメント欄 -->
@@ -24,10 +28,8 @@
         <br/>
         <p style="font-size: 18px;">&nbsp;&nbsp;<%= comment.body %></p>
         <%= react_component 'C_like', post: comment.id, url: c_likes_path %>
-
       </div>
       <% end %>
-
     </div>
   </section>
 </div>
