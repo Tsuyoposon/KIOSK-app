@@ -1,0 +1,12 @@
+<h1>Confirmation#status</h1>
+<p>
+  <%= @this.name %>
+  <%= @this.latitude %>
+  <%= @this.longitude %>
+</p>
+<p>
+  端末（盛岡駅）から<%= @distance = ConfirmationController.get_distance(@this.latitude, @this.longitude) %>Km の距離を加算
+</p>
+<p>
+  <%= @current_user.moving %>にする　
+</p>

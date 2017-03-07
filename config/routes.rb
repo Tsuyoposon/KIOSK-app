@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'confirmation/ranking'
 
+  get 'confirmation/kakuninn'
+
   resource :wents, except: [:edit, :new, :show]
   resources :wents, only: [:index, :show]
 
