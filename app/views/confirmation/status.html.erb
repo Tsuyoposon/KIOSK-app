@@ -1,3 +1,31 @@
-<h1>Confirmation#status</h1>
-<p><%= @current_user.point %></p>
-<p><%= @current_user.moving %></p>
+<h1>
+  マイページ&nbsp;&nbsp;&nbsp;
+  <%= link_to("ウォークランキングへ", confirmation_ranking_path, class: "btn btn-success", style: "color: #FFFFFF") %>
+</h1>
+<!-- 左側MENU -->
+<div class="col-md-3">
+  <section class="bs-component" style="margin-top: 30px;">
+  <div class="list-group">
+    <div style="text-align: center"><a class="list-group-item active" style="font-size: 20px;">
+      MENU
+    </a></div>
+    <a href="#" class="list-group-item">ログイン情報
+    </a>
+    <a href="#" class="list-group-item">プロフィール
+    </a>
+    <a href="#" class="list-group-item">morio-jポイントの設定
+    </a>
+    <a href="#" class="list-group-item">各種設定
+    </a>
+  </div>
+</section>
+</div>
+
+<!-- 右側 -->
+<div class="col-md-9">
+  <section class="card-show">
+    <p><%= @current_user.point %></p>
+    <p><%= @current_user.moving.round(1) %></p>
+
+  </section>
+</div>
