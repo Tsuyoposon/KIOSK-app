@@ -5,6 +5,7 @@ class ConfirmationController < ApplicationController
   end
 
   def ranking
+    @ranking_users = User.order("moving DESC")
   end
 
   def kakuninn

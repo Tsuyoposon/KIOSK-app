@@ -1,3 +1,6 @@
-<h1>Confirmation#status</h1>
+<h1>
+  ポイント確認画面&nbsp;&nbsp;&nbsp;
+  <%= link_to("ウォークランキングへ", confirmation_ranking_path, class: "btn btn-success", style: "color: #FFFFFF") %>
+</h1>
 <p><%= @current_user.point %></p>
-<p><%= @current_user.moving %></p>
+<p><%= @current_user.moving.round(1) %></p>

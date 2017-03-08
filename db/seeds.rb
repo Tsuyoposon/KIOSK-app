@@ -30,23 +30,33 @@ User.create(
 )
 User.create(
 :id => 6,
-:name => "ユーザ６"
+:name => "ユーザ６",
+:point => 600,
+:moving => 6.6
 )
 User.create(
 :id => 7,
-:name => "ユーザ７"
+:name => "ユーザ７",
+:point => 700,
+:moving => 7.7
 )
 User.create(
 :id => 8,
-:name => "ユーザ８"
+:name => "ユーザ８",
+:point => 800,
+:moving => 8.8
 )
 User.create(
 :id => 9,
-:name => "ユーザ９"
+:name => "ユーザ９",
+:point => 900,
+:moving => 9.9
 )
 User.create(
 :id => 10,
-:name => "ユーザ１０"
+:name => "ユーザ１０",
+:point => 1000,
+:moving => 10.1
 )
 Shop.create(
 :id => 1,
