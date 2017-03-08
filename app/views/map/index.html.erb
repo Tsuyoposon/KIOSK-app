@@ -20,7 +20,7 @@
 </script>
 <% @shops.each do |shop| %>
     <script type="text/javascript">
-        var popup = L.popup().setContent('<%= simple_format(h(shop.name)) %><%= link_to '詳細', shop %>\n<%= image_tag(shop.image,:size => "86×86", :class => "card-img", :alt => "") %>\n\nいいね：<%= @likes.where(shop_id: shop.id).count + @c_likes.where(comment_id: @comments.where(shop_id: shop.id)).count %>　コメント：<%= @comments.where(shop_id: shop.id).count %>');
+        var popup = L.popup().setContent('<%= simple_format(h(shop.name)) %>\n<%= image_tag(shop.image,:size => "86×86", :class => "card-img", :alt => "") %>\n\nいいね：<%= @likes.where(shop_id: shop.id).count + @c_likes.where(comment_id: @comments.where(shop_id: shop.id)).count %>　コメント：<%= @comments.where(shop_id: shop.id).count %>　<%= link_to '詳細', shop %>');
         var marker = L.marker(
             [<%= shop.latitude %>,<%= shop.longitude %>],
             { name: map.name }
