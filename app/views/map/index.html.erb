@@ -11,18 +11,18 @@
 <script type="text/javascript">
     L.Icon.Default.imagePath = "/assets";
     var map = L.map('map').setView([39.703531, 141.152667],15);
-    var osmUrl = "https://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg";
+    var osmUrl = "http://tile.openstreetmap.jp/{z}/{x}/{y}.png";
     var osmAttrib = "Map data &COPY; OpenStreetMap contributors";
     L.tileLayer(osmUrl, {
         attribution: osmAttrib,
         maxZoom: 20,
     }).addTo(map);
 </script>
-<% @shops.each do |map| %>
+<% @shops.each do |shop| %>
     <script type="text/javascript">
-        var popup = L.popup().setContent('<%= simple_format(h(map.name)) %><%= link_to '詳細', map %>');
+        var popup = L.popup().setContent('<%= simple_format(h(shop.name)) %><%= link_to '詳細', shop %>\n<%= image_tag(shop.image,:size => "86×86", :class => "card-img", :alt => "") %>\n\nいいね：<%= @likes.where(shop_id: shop.id).count + @c_likes.where(comment_id: @comments.where(shop_id: shop.id)).count %>　コメント：<%= @comments.where(shop_id: shop.id).count %>');
         var marker = L.marker(
-            [<%= map.latitude %>,<%= map.longitude %>],
+            [<%= shop.latitude %>,<%= shop.longitude %>],
             { name: map.name }
         ).addTo(map).bindPopup(popup);
     </script>
