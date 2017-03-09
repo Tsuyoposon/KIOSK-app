@@ -23,12 +23,16 @@
 
 <!-- 右側 -->
 <div class="col-md-9">
-  <section class="card-show" style="padding: 3px 30px;">
+  <section class="card-show" style="padding: 3px 30px 30px 30px;">
     <h2>&nbsp;&nbsp;ポイント・移動距離確認</h2>
     <div class="middle-card">ポイント</div>
-    <p><%= @current_user.point %></p>
+    <p style="font-size: 17px; margin-left: 30px;">
+      <strong><%= @current_user.point %></strong> ポイント
+    </p>
     <div class="middle-card">移動距離</div>
-    <p><%= @current_user.moving.round(1) %></p>
+    <p style="font-size: 17px; margin-left: 30px;">
+      <strong><%= @current_user.moving.round(1) %></strong> km
+    </p>
 
   </section>
 </div>
