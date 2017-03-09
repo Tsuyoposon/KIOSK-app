@@ -25,6 +25,24 @@ textarea {
 * Licensed under the MIT license
 */
 
+.ranking_card {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  margin-left: auto;
+  margin-right: auto;
+	margin-bottom: 60px;
+}
+.middle-card {
+  background: #18BC9C;
+	color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+	margin-top: 30px;
+	font-size: 17px;
+}
 .top-img {
 	max-width: 50%;
 	height: auto;
@@ -75,7 +93,6 @@ textarea {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-
 }
 .card-comment {
   width: 700px;
