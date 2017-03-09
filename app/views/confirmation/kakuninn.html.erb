@@ -1,12 +1,31 @@
-<h1>Confirmation#status</h1>
-<p>
-  <%= @this.name %>
-  <%= @this.latitude %>
-  <%= @this.longitude %>
-</p>
-<p>
-  端末（盛岡駅）から<%= @distance = ConfirmationController.get_distance(@this.latitude, @this.longitude) %>Km の距離を加算
-</p>
-<p>
-  <%= @current_user.moving.round(1) %>にする　
-</p>
+<%
+if session[:ref] != 1 then
+  session[:ref] = 1
+  # 通常時の処理
+  @distance = ConfirmationController.save_distance(@this.latitude, @this.longitude, session[:user_id])
+  session[:distance] = @distance.round(1)
+  @current_user.reload
+else
+
+end
+%>
+<section class="card-comment-show">
+  <p style="font-size: 16px;">以下の店に行きました</p>
+  <p style="font-size: 20px; margin: 20px;">
+    &nbsp;&nbsp;店名：
+    <strong><%= @this.name %></strong>
+  </p>
+  <p>
+    端末（盛岡駅）からの距離
+    <strong>
+      <%= session[:distance]%>
+    </strong>kmのが追加されました
+  </p>
+  <p>
+    現在の移動距離 <strong><%= @current_user.moving.round(1) %></strong> km
+  </p>
+  <ul class="list-inline">
+    <li><%= button_to "ショップへ戻る", shop_path(@this.id), :method => :get , :class => "btn btn-success" %></li>
+    <li><%= button_to "トップ画面へ戻る", root_path, :method => :get , :class => "btn btn-info" %></li>
+  </ul>
+</section>
