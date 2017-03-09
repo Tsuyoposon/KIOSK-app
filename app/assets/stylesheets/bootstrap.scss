@@ -24,6 +24,15 @@ textarea {
 * Copyright 2011-2016 Twitter, Inc.
 * Licensed under the MIT license
 */
+
+.ranking_card {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  margin-left: auto;
+  margin-right: auto;
+	margin-bottom: 60px;
+}
 .middle-card {
   background: #18BC9C;
 	color: #fff;
@@ -84,7 +93,6 @@ textarea {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-
 }
 .card-comment {
   width: 700px;
