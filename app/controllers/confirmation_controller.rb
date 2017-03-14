@@ -13,6 +13,10 @@ class ConfirmationController < ApplicationController
     @current_user = User.find_by(id: session[:user_id])
   end
 
+  def pointgame
+
+  end
+
   # 引数に値を入れて距離を出す
   def self.save_distance(lat1, lng1, user_id)
     y1 = lat1 * Math::PI / 180
