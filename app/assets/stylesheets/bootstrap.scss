@@ -24,7 +24,23 @@ textarea {
 * Copyright 2011-2016 Twitter, Inc.
 * Licensed under the MIT license
 */
-
+.map-title {
+	display: inline-block;
+  background: #18BC9C;
+	color: #fff;
+  border-radius: 5px;
+  margin: 5px 0px;
+	padding: 3px 5px;
+	font-size: 15px;
+}
+.map-img {
+  border-radius: 5px 5px 5px 5px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .ranking_card {
   background: #fff;
   border-radius: 5px;
