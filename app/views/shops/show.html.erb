@@ -1,13 +1,26 @@
-<% session[:ref] = 0 %>
+<!-- 色々セット -->
+<%
+session[:ref] = 0
+@distance = ShopsController.get_distance(@shop.latitude, @shop.longitude)
+%>
+
 <div class="col-md-9">
   <section class="card-show">
     <%= image_tag("aikon.png", :class => "aikon-img") %>
     <h1 class="card-title-show"><%= @shop.name %></h1>
     <%= image_tag(@shop.image, :class => "card-img-show", :alt => "") %>
     <p class="card-text-show"><%= @shop.body %></p>
-    <div align="right" style="margin: 0px 40px;">
-      <%= link_to("この店に行く", confirmation_kakuninn_path(this_shop: @shop.id), class: "btn btn-warning", style: "color: #FFFFFF") %>
-    </div>
+
+    <!-- 移動距離 -->
+    <ul class="list-inline" align = "right" style="margin: 0px 40px;">
+      <li style="font-size: 20px;">
+        ここからの距離：<strong><%= @distance %></strong> km
+      </li>
+      <li>
+        <%= link_to("この店に行く", confirmation_kakuninn_path(this_shop: @shop.id), class: "btn btn-warning", style: "color: #FFFFFF") %>
+      </li>
+    </ul>
+
     <%= react_component 'Like', post: @shop.id, url: likes_path %>
     <%= react_component 'Went', post: @shop.id, url: wents_path %>
 

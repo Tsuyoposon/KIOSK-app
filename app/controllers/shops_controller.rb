@@ -70,6 +70,20 @@ class ShopsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  # 引数に値を入れて距離を出す
+  def self.get_distance(lat1, lng1)
+    y1 = lat1 * Math::PI / 180
+    x1 = lng1 * Math::PI / 180
+    y2 = 39.702176 * Math::PI / 180
+    x2 = 141.13615400 * Math::PI / 180
+    earth_r = 6378140
+
+    deg = Math::sin(y1) * Math::sin(y2) + Math::cos(y1) * Math::cos(y2) * Math::cos(x2 - x1)
+    distance = earth_r * (Math::atan(-deg / Math::sqrt(-deg * deg + 1)) + Math::PI / 2) / 1000
+    
+    # 有効桁数を0.0にする
+    return distance.round(1)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
