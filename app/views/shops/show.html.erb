@@ -1,15 +1,35 @@
-<% session[:ref] = 0 %>
+<!-- 色々セット -->
+<%
+session[:ref] = 0
+@distance = ShopsController.get_distance(@shop.latitude, @shop.longitude)
+%>
+
 <div class="col-md-9">
   <section class="card-show">
     <%= image_tag("aikon.png", :class => "aikon-img") %>
     <h1 class="card-title-show"><%= @shop.name %></h1>
     <%= image_tag(@shop.image, :class => "card-img-show", :alt => "") %>
     <p class="card-text-show"><%= @shop.body %></p>
-    <div align="right" style="margin: 0px 40px;">
-      <%= link_to("この店に行く", confirmation_kakuninn_path(this_shop: @shop.id), class: "btn btn-warning", style: "color: #FFFFFF") %>
-    </div>
+
+    <!-- 移動距離 -->
+    <ul class="list-inline" align = "right" style="margin: 0px 40px;">
+      <li style="font-size: 20px;">
+        ここからの距離：<strong><%= @distance %></strong> km
+      </li>
+      <li>
+        <%= link_to("この店に行く", confirmation_kakuninn_path(this_shop: @shop.id), class: "btn btn-warning", style: "color: #FFFFFF") %>
+      </li>
+    </ul>
+
     <%= react_component 'Like', post: @shop.id, url: likes_path %>
-    <%= react_component 'Went', post: @shop.id, url: wents_path %>
+    <ul class="list-inline nav nav-pills">
+      <li class="active"><p style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;行きました&nbsp;<span class="badge" style="background-color: #69D3BF;"><%= @wents.where(shop_id: @shop.id).count %></span></p></li>
+      <% if @wents.find_by(user_id: @current_user.id, shop_id: @shop.id).present? then %>
+      <li><button class="btn btn-success disabled btn-sm"><strong>行ったよ!</strong></button></li>
+      <% else %>
+      <li><button class="btn btn-success disabled btn-sm"><strong>まだ行ってない</strong></button></li>
+      <% end %>
+    </ul>
 
   </section>
 
@@ -57,7 +77,11 @@
             <%= @likes.where(shop_id: shop.id).count + @c_likes.where(comment_id: @comments.where(shop_id: shop.id)).count %>
           </span>
         </p></li>
-        <li><p style="font-size: 17px;">行きました&nbsp;<span class="badge" style="background-color: #69D3BF"><%= @wents.where(shop_id: shop.id).count %></span></p></li>
+        <li><p style="font-size: 17px;">行きました&nbsp;
+          <span class="badge" style="background-color: #69D3BF">
+            <%= @wents.where(shop_id: shop.id).count %>
+          </span>
+        </p></li>
       </ul>
     </div>
   </section>
