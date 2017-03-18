@@ -1,1 +1,43 @@
-<h1>pointgame</h1>
+<%
+if request.url != session[:ref2] then
+  session[:ref2] = request.url
+
+  if session[:user_id].blank? then
+    session[:user_id] = 1
+  elsif params[:q].present? and (session[:user_id] != params[:q]) then
+    session[:user_id] = params[:q]
+  end
+  @current_user = User.find_by(id: session[:user_id])
+  %>
+
+  <%
+
+  if session[:change_user] != session[:user_id] then
+    session[:change] = session[:change_user]
+    session[:user] = session[:user_id]
+    session[:change_user] = @current_user.id
+    # 通常時の処理
+    @give_point = ConfirmationController.random_point
+    session[:give_point] = @give_point
+    @current_user = User.find_by(id: session[:user_id])
+    @current_user.point += @give_point
+    @current_user.save
+  end
+  %>
+
+  <h1>pointgame</h1>
+
+  <p>give_point: <%= session[:give_point]%></p>
+  <p>現在の「<%= @current_user.name %>」さんのポイント: <%= @current_user.point%></p>
+  <p>change: <%= session[:change]%></p>
+  <p>user: <%= session[:user]%></p>
+  <p>change_user: <%= session[:change_user]%></p>
+  <p>user_id: <%= session[:user_id]%></p>
+
+  <%
+else
+%>
+<%= render :template => "top/index"%>
+<%
+end
+%>

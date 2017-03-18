@@ -14,7 +14,7 @@ class ConfirmationController < ApplicationController
   end
 
   def pointgame
-
+  
   end
 
   # 引数に値を入れて距離を出す
@@ -37,4 +37,9 @@ class ConfirmationController < ApplicationController
     return distance.round(1)
   end
 
+  # ランダムでポイント付与
+  def self.random_point
+    point = 100
+    return point
+  end
 end
