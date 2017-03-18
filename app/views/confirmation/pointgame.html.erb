@@ -1,0 +1,45 @@
+<%
+if request.url != session[:ref2] then
+  session[:ref2] = request.url
+
+  if session[:user_id].blank? then
+    session[:user_id] = 1
+  elsif params[:q].present? and (session[:user_id] != params[:q]) then
+    session[:user_id] = params[:q]
+  end
+  @current_user = User.find_by(id: session[:user_id])
+  %>
+
+  <%
+
+  if session[:change_user] != session[:user_id] then
+    session[:change_user] = @current_user.id
+    # 通常時の処理
+    @give_point = ConfirmationController.random_point
+    @current_user = User.find_by(id: session[:user_id])
+    @current_user.point += @give_point
+    @current_user.save
+  end
+  %>
+  <section class="card-show" style="padding: 3px 30px 30px 30px;">
+    <h2>&nbsp;&nbsp;ポイントゲーム</h2>
+    <div class="middle-card">獲得ポイント</div>
+    <p style="font-size: 17px; margin-left: 30px; margin-bottom: 30px;">
+      <strong><%= @give_point %></strong> ポイント
+    </p>
+        <p style="font-size: 17px; margin: 20px;">
+      「<%= @current_user.name %>」さんログインありがとうございます<br>
+      獲得ポイントを登録しました
+    </p>
+    <ul class="list-inline">
+      <li><%= button_to "ポイントを確認する", confirmation_status_path, :method => :get , :class => "btn btn-success" %></li>
+      <li><%= button_to "トップ画面へ行く", root_path, :method => :get , :class => "btn btn-info" %></li>
+    </ul>
+  </section>
+  <%
+else
+%>
+<%= render :template => "top/index"%>
+<%
+end
+%>
