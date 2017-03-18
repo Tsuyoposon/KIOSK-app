@@ -11,10 +11,16 @@ class ConfirmationController < ApplicationController
   def kakuninn
     @this = Shop.find_by(id: params[:this_shop])
     @current_user = User.find_by(id: session[:user_id])
+    @wents = Went.all
+
+    if @wents.find_by(user_id: session[:user_id], shop_id: params[:this_shop]).nil? then
+      went = Went.new(:user_id => session[:user_id], :shop_id => params[:this_shop])
+      went.save
+    end
   end
 
   def pointgame
-  
+
   end
 
   # 引数に値を入れて距離を出す

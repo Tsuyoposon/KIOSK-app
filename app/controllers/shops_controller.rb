@@ -20,6 +20,7 @@ class ShopsController < ApplicationController
     @likes = Like.all
     @c_likes = CLike.all
     @wents = Went.all
+    @current_user = User.find_by(id: session[:user_id])
   end
 
   # GET /shops/new
@@ -80,7 +81,7 @@ class ShopsController < ApplicationController
 
     deg = Math::sin(y1) * Math::sin(y2) + Math::cos(y1) * Math::cos(y2) * Math::cos(x2 - x1)
     distance = earth_r * (Math::atan(-deg / Math::sqrt(-deg * deg + 1)) + Math::PI / 2) / 1000
-    
+
     # 有効桁数を0.0にする
     return distance.round(1)
   end
