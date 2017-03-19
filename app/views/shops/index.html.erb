@@ -7,7 +7,7 @@
 <ul class="frex">
   <% shops.each do |shop| %>
   <!-- カード -->
-  <%= link_to(shop) do %>
+  <%= link_to(shop, :style => "text-decoration:none;") do %>
   <section class="card">
     <%= image_tag(shop.image, :class => "card-img", :alt => "") %>
     <div class="card-content">
