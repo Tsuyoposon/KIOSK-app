@@ -45,7 +45,16 @@ class ConfirmationController < ApplicationController
 
   # ランダムでポイント付与
   def self.random_point
-    point = 100
+    rate = rand(100) + 1
+    if rate == 1 then
+      point = 5000
+    elsif (2 <= rate) && (rate <= 20) then
+      point = 500
+    elsif (21 <= rate) && (rate <=50) then
+      point = 100
+    else
+      point = 50
+    end
     return point
   end
 end
