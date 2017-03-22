@@ -4,9 +4,9 @@
 </h1>
 <div id="map"></div>
 <style type="text/css">
-  #map {
-    height:80vh;
-  }
+  #map { height:80vh; }
+  .leaflet-marker-icon-color-gray  { -webkit-filter: grayscale(100%); filter: grayscale(100%); }
+  .leaflet-marker-icon-color-blue  { -webkit-filter: hue-rotate(-270deg); filter: hue-rotate(-9deg); }
 </style>
 <script type="text/javascript">
     L.Icon.Default.imagePath = "/assets";
@@ -17,6 +17,7 @@
         attribution: osmAttrib,
         maxZoom: 20,
     }).addTo(map);
+
 </script>
 <% @shops.each do |shop| %>
     <script type="text/javascript">
@@ -25,5 +26,11 @@
             [<%= shop.latitude %>,<%= shop.longitude %>],
             { name: map.name }
         ).addTo(map).bindPopup(popup);
+        <% if @wents.find_by(user_id: @current_user.id, shop_id: shop.id).present? then %>
+          L.DomUtil.addClass( marker._icon, "leaflet-marker-icon-color-gray")
+        <% else %>
+          L.DomUtil.addClass( marker._icon, "leaflet-marker-icon-color-blue")
+        <% end %>
+
     </script>
 <% end %>
