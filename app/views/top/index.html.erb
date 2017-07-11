@@ -1,4 +1,14 @@
+<%
+if session[:user_id] === 0 || current_user.nil? then
+  session[:card_flag] = 0
+  session[:change_user] = 20
+%>
+<%= link_to("カードを使わないでログイン", confirmation_pointgame_path(q: '1'), class: "btn btn-warning", style: "color: #FFFFFF") %>
+<% else %>
 <h1 face="Impact" style="margin-bottom: 30px;">KIOSK端末 トップ</h1>
+<%= session[:user_id] %>
+<%= session[:card_flag] %>
+<%= session[:change_user] %>
 <ul class="frex" style="padding-left: 100px; padding-right: 100px;">
   <%= link_to(shops_path) do %>
   <section class="top-card">
@@ -42,3 +52,4 @@
   </section>
   <% end %>
 </ul>
+<% end %>

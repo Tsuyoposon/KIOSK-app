@@ -1,5 +1,5 @@
 <%
-if request.url != session[:ref2] then
+if request.url != session[:ref2] || session[:change_user] == 20 then
   session[:ref2] = request.url
 
   if session[:user_id].blank? then
