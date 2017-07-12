@@ -2,20 +2,28 @@
 if session[:user_id] === 0 || current_user.nil? then
   session[:card_flag] = 0
   session[:change_user] = 20
+
 %>
+<%= @users %>
+<div id='user' data-json=<%= @users.to_json %>></div>
 <script type=text/javascript>
 window.clipboardData.setData('Text', 'login in!');
+window.users = <%= raw @users.to_json %>;
+var i = 0;
 function get_clip(){
   $("#idm").val(window.clipboardData.getData("Text"));
-  if (window.clipboardData.getData("Text") == "0114C568CB15023F"){
-    window.clipboardData.setData('Text', 'login!');
-    window.location.href = '/confirmation/pointgame?q=1';
-
+  i = 0;
+  while(i<5){
+    if (window.clipboardData.getData("Text") == window.users[i].idm){
+      window.clipboardData.setData('Text', 'login!');
+      window.location.href = '/confirmation/pointgame?q=' + (++i);
+    }
+    i ++;
   }
 };
 $(document).ready(function startfnc(){
   //関数get_clip()を1000ミリ秒間隔で呼び出す
-  setInterval("get_clip()",1000);
+  setInterval("get_clip()",500);
 });
 -->
 </script>
