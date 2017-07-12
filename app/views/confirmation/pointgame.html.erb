@@ -34,6 +34,7 @@ if request.url != session[:ref2] || session[:change_user] == 20 then
     <ul class="list-inline">
       <li><%= button_to "ポイントを確認する", confirmation_status_path, :method => :get , :class => "btn btn-success" %></li>
       <li><%= button_to "トップ画面へ行く", root_path, :method => :get , :class => "btn btn-info" %></li>
+      <%= @current_user.idm %>
     </ul>
   </section>
   <%

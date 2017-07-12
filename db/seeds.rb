@@ -2,31 +2,36 @@ User.create(
 :id => 1,
 :name => "ユーザ１",
 :point => 100,
-:moving => 1.1
+:moving => 1.1,
+:idm => "0114C568CB15023F"
 )
 User.create(
 :id => 2,
 :name => "ユーザ２",
 :point => 200,
-:moving => 2.2
+:moving => 2.2,
+:idm => "0114C568CB15C733"
 )
 User.create(
 :id => 3,
 :name => "ユーザ３",
 :point => 300,
-:moving => 3.3
+:moving => 3.3,
+:idm => "0114C568CB159912"
 )
 User.create(
 :id => 4,
 :name => "ユーザ４",
 :point => 400,
-:moving => 4.4
+:moving => 4.4,
+:idm => "0114B56891155C0E"
 )
 User.create(
 :id => 5,
 :name => "ユーザ５",
 :point => 500,
-:moving => 5.5
+:moving => 5.5,
+:idm => "0114C568CB15DD41"
 )
 User.create(
 :id => 6,
