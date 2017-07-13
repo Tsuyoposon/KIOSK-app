@@ -67,12 +67,11 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
           <ul class="nav navbar-nav">
-            <li><%= link_to  "SHOP", shops_path %></li>
-            <li><%= link_to  "MYPAGE", confirmation_status_path %></li>
+            <li><%= link_to  "SHOP" %></li>
+            <li><%= link_to  "MYPAGE" %></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ユーザを変える<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-              </ul>
+
             </li>
             <li><a style="font-size: 15px;"><strong style="font-size: 17px;">--</strong>でログイン中</a></li>
           </ul>
@@ -83,7 +82,7 @@
               </div>
               <button type="submit" class="btn btn-default">search</button>
             </form>
-            <li><a href="#">Inquiry</a></li>
+            <li><a href="#">--</a></li>
           </ul>
         </div>
       </div>
@@ -113,6 +112,7 @@
             <li><%= link_to  "MYPAGE", confirmation_status_path %></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ユーザを変える<span class="caret"></span></a>
+              <% if session[:card_flag] == 0 then %>
               <ul class="dropdown-menu" role="menu">
                 <li><%= link_to  "ユーザ１", confirmation_pointgame_path(q: '1') %></li>
                 <li><%= link_to  "ユーザ２", confirmation_pointgame_path(q: '2') %></li>
@@ -120,13 +120,14 @@
                 <li><%= link_to  "ユーザ４", confirmation_pointgame_path(q: '4') %></li>
                 <li><%= link_to  "ユーザ５", confirmation_pointgame_path(q: '5') %></li>
               </ul>
+              <% end %>
             </li>
             <li><a style="font-size: 15px;"><strong style="font-size: 17px;">
               <%if current_user.nil? then %>
-              </strong>でログイン中<%= session[:user_id]%></a>
-              <% else %>
-              <%= current_user.name %></strong>でログイン中<%= session[:user_id]%></a>
-              <% end %>
+            </strong>でログイン中<%= session[:user_id]%></a>
+            <% else %>
+            <%= current_user.name %></strong>でログイン中<%= session[:user_id]%></a>
+            <% end %>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">

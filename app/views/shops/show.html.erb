@@ -12,13 +12,15 @@ session[:ref] = 0
     <p class="card-text-show"><%= @shop.body %></p>
 
     <!-- 移動距離 -->
-    <ul class="list-inline" align = "right" style="margin: 0px 40px;">
+    <ul class="list-inline" align = "right" style="margin: 20px 40px;">
       <li style="font-size: 20px;">
         ここからの距離：<strong><%= @distance %></strong> km
       </li>
+      <% if session[:card_flag] == 0 then %>
       <li>
         <%= link_to("この店に行く", confirmation_kakuninn_path(this_shop: @shop.id), class: "btn btn-warning", style: "color: #FFFFFF") %>
       </li>
+      <% end %>
     </ul>
 
     <%= react_component 'Like', post: @shop.id, url: likes_path %>

@@ -15,7 +15,9 @@ function get_clip(){
   i = 0;
   while(i<5){
     if (window.clipboardData.getData("Text") == window.users[i].idm){
+      <% session[:card_flag] = 1 %>
       window.clipboardData.setData('Text', 'login!');
+      clearInterval(get_clip);
       window.location.href = '/confirmation/pointgame?q=' + (++i);
     }
     i ++;
@@ -23,7 +25,7 @@ function get_clip(){
 };
 $(document).ready(function startfnc(){
   //関数get_clip()を1000ミリ秒間隔で呼び出す
-  setInterval("get_clip()",500);
+  setInterval("get_clip()",1000);
 });
 -->
 </script>
