@@ -1,4 +1,48 @@
+<%
+if session[:user_id] === 0 || current_user.nil? then
+  session[:card_flag] = 0
+  session[:change_user] = 20
+
+%>
+<%= @users %>
+<div id='user' data-json=<%= @users.to_json %>></div>
+<script type=text/javascript>
+window.clipboardData.setData('Text', 'login in!');
+window.users = <%= raw @users.to_json %>;
+var i = 0;
+function get_clip(){
+  $("#idm").val(window.clipboardData.getData("Text"));
+  i = 0;
+  while(i<5){
+    if (window.clipboardData.getData("Text") == window.users[i].idm){
+      window.clipboardData.setData('Text', 'login!');
+      window.location.href = '/confirmation/pointgame?q=' + (++i);
+    }
+    i ++;
+  }
+};
+$(document).ready(function startfnc(){
+  //関数get_clip()を1000ミリ秒間隔で呼び出す
+  setInterval("get_clip()",500);
+});
+-->
+</script>
+<div id="get_clipboard"><p>aaaa</p></div>
+<form method="post" action="CGIのURI">
+  <p>
+    ID：<input type="text" id="idm" name="氏名" />
+
+  </p>
+</form>
+<%= link_to("カードを使わないでログイン", confirmation_pointgame_path(q: '1'), class: "btn btn-warning", style: "color: #FFFFFF") %>
+
+
+
+<% else %>
 <h1 face="Impact" style="margin-bottom: 30px;">KIOSK端末 トップ</h1>
+<%= session[:user_id] %>
+<%= session[:card_flag] %>
+<%= session[:change_user] %>
 <ul class="frex" style="padding-left: 100px; padding-right: 100px;">
   <%= link_to(shops_path) do %>
   <section class="top-card">
@@ -42,3 +86,4 @@
   </section>
   <% end %>
 </ul>
+<% end %>
