@@ -4,11 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user
-    if session[:user_id].blank? || params[:q] === 0
-      session[:user_id] = 0
-    elsif params[:q].present? and (session[:user_id] != params[:q])
-      session[:user_id] = params[:q]
 
+    if session[:user_id].blank? || params[:q] === 0 then
+      session[:user_id] = 0
+    elsif params[:q].present? and (session[:user_id] != params[:q]) then
+      session[:user_id] = params[:q]
+    end
+    if session[:user_id] == "11"
+      session[:card_flag] = 0
+      session[:user_id] = 1
     end
     @current_user ||= User.find_by(id: session[:user_id])
   end

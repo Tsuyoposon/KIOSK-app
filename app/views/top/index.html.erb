@@ -1,6 +1,5 @@
 <%
 if session[:user_id] === 0 || current_user.nil? then
-  session[:card_flag] = 0
   session[:change_user] = 20
 
 %>
@@ -36,8 +35,11 @@ $(document).ready(function startfnc(){
 
   </p>
 </form>
-<%= link_to("カードを使わないでログイン", confirmation_pointgame_path(q: '1'), class: "btn btn-warning", style: "color: #FFFFFF") %>
 
+<%= link_to("カードを使わないでログイン", confirmation_pointgame_path(q: 11), class: "btn btn-warning", style: "color: #FFFFFF") %>
+<%= session[:user_id] %>
+<%= session[:card_flag] %>
+<%= session[:change_user] %>
 
 
 <% else %>
