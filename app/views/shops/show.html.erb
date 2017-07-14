@@ -25,16 +25,15 @@ session[:ref] = 0
       window.clipboardData.setData('Text', 'go shop!');
       window.current_user = <%= raw @current_user.to_json %>;
       function get_clip(){
-        $("#idm").val(window.clipboardData.getData("Text"));
           if (window.clipboardData.getData("Text") == window.current_user.idm){
             window.clipboardData.setData('Text', 'going shop!');
-            clearInterval(get_clip);
+            clearInterval(timer);
             window.location.href = '/confirmation/kakuninn?this_shop=' + <%= @shop.id %>;
           }
       };
       $(document).ready(function startfnc(){
         //関数get_clip()を1000ミリ秒間隔で呼び出す
-        setInterval("get_clip()",1000);
+        timer = setInterval("get_clip()",500);
       });
       -->
       </script>
