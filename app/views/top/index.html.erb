@@ -1,6 +1,5 @@
 <%
 if session[:user_id] === 0 || current_user.nil? then
-  session[:card_flag] = 0
   session[:change_user] = 20
 
 %>
@@ -11,11 +10,12 @@ window.clipboardData.setData('Text', 'login in!');
 window.users = <%= raw @users.to_json %>;
 var i = 0;
 function get_clip(){
-  $("#idm").val(window.clipboardData.getData("Text"));
   i = 0;
   while(i<5){
     if (window.clipboardData.getData("Text") == window.users[i].idm){
+      <% session[:card_flag] = 1 %>
       window.clipboardData.setData('Text', 'login!');
+      clearInterval(timer);
       window.location.href = '/confirmation/pointgame?q=' + (++i);
     }
     i ++;
@@ -23,7 +23,7 @@ function get_clip(){
 };
 $(document).ready(function startfnc(){
   //関数get_clip()を1000ミリ秒間隔で呼び出す
-  setInterval("get_clip()",500);
+  timer = setInterval("get_clip()",500);
 });
 -->
 </script>
@@ -34,8 +34,11 @@ $(document).ready(function startfnc(){
 
   </p>
 </form>
-<%= link_to("カードを使わないでログイン", confirmation_pointgame_path(q: '1'), class: "btn btn-warning", style: "color: #FFFFFF") %>
 
+<%= link_to("カードを使わないでログイン", confirmation_pointgame_path(q: 11), class: "btn btn-warning", style: "color: #FFFFFF") %>
+<%= session[:user_id] %>
+<%= session[:card_flag] %>
+<%= session[:change_user] %>
 
 
 <% else %>
