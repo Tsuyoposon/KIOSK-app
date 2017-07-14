@@ -1,9 +1,8 @@
-<!-- ここからログイン画面 -->
+<!-- ログイン画面の処理 -->
 <%
 if session[:user_id] === 0 || current_user.nil? then
   session[:change_user] = 20
 %>
-<div id='user' data-json=<%= @users.to_json %>></div>
 <script type=text/javascript>
 window.clipboardData.setData('Text', 'login in!');
 window.users = <%= raw @users.to_json %>;
@@ -22,13 +21,45 @@ function get_clip(){
 };
 $(document).ready(function startfnc(){
   //関数get_clip()を1000ミリ秒間隔で呼び出す
-  timer = setInterval("get_clip()",500);
+  timer = setInterval("get_clip()",1000);
 });
 -->
 </script>
 
+<!-- ログイン画面 -->
+<h1 face="Impact" style="margin-bottom: 5px;">KIOSK端末 ログイン画面</h1>
+<section class="card-comment-show" style="padding-left: 50px; margin-top: 20px;">
+  <ul class="list-inline" style="text-align: center;">
+    <li><div style="border-bottom: 4px solid #33B7B1; margin-bottom: 10px; border-radius: 5px 5px 5px 5px; width: 150px;"></div></li>
+    <li>
+      <p style="font-size: 30px; margin: 20px 7px;text-align: center; color: #33B7B1; ">
+        MORIO-J KIOSK端末へようこそ
+      </p>
+    </li>
+    <li><div style="border-bottom: 4px solid #33B7B1; margin-bottom: 10px; border-radius: 5px 5px 5px 5px; width: 150px;"></div></li>
+  </ul>
+  <h3 face="Impact" style="margin-bottom: 10px; color: #33B7B1;"><strong>このサイトについて</strong></h3>
+  <p style="font-size: 20px;line-height: 1.2;">
+    &nbsp;&nbsp;このサイトは「KIOSK端末」のデモサイトで、MORIO-Jの店舗情報を見ることができます<br>
+    登録された「MORIO-Jカード」をかざすことでログインができ、様々な機能が使えます
+  </p>
+  <h3 face="Impact" style="margin-bottom: 10px; color: #33B7B1;"><strong>実装機能</strong></h3>
+  <p style="font-size: 20px;line-height: 1.2;">
+    &nbsp;&nbsp;・ショップ一覧<br>
+    &nbsp;&nbsp;・ショップマップ<br>
+    &nbsp;&nbsp;・お店に行く機能（ショップ詳細でカードをかざすとできます）<br>
+    &nbsp;&nbsp;・マイページ<br>
+    &nbsp;&nbsp;・ウォークラリーランキング<br>
+  </p>
+  <h3 face="Impact" style="margin-bottom: 10px; color: #33B7B1;"><strong>カードがない場合</strong></h3>
+  <p style="font-size: 17px;line-height: 1.2;">
+    &nbsp;&nbsp;ナビバーの「ユーザを変える」でユーザを変えることができます<br>
+  </p>
+  <ul class="list-inline">
+    <li>&nbsp;&nbsp;<%= link_to("カードを使わないでログイン", confirmation_pointgame_path(q: 11), class: "btn btn-warning", style: "color: #FFFFFF") %></li>
+  </ul>
+</section>
 
-<%= link_to("カードを使わないでログイン", confirmation_pointgame_path(q: 11), class: "btn btn-warning", style: "color: #FFFFFF") %>
 
 
 
